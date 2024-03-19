@@ -7,7 +7,7 @@ import java.util.Date;
  * It extends the CinemaMovieBase class.
  */
 public class CinemaMovieDriveIn extends CinemaMovieBase {
-       
+    private int maxCarLength;
 
     /**
      * Constructs a CinemaMovieDriveIn object with the specified start date, title,
@@ -20,7 +20,8 @@ public class CinemaMovieDriveIn extends CinemaMovieBase {
      *                     cinema.
      */
     public CinemaMovieDriveIn(Date startDate, String title, String genre, int maxCarLength) {
-           
+          super(startDate, title, genre);
+          this.maxCarLength = maxCarLength;
     }
 
     /**
@@ -32,6 +33,8 @@ public class CinemaMovieDriveIn extends CinemaMovieBase {
      */
     @Override
     public String displayTeaser() {
-           
+        return super.displayTeaser() + System.lineSeparator() +
+                String.format("Maximum length of car is %d meter !", maxCarLength) + System.lineSeparator() +
+                this.additionalProduct;
     }
 }

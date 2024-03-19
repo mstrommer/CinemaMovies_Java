@@ -16,7 +16,7 @@ public class CinemaMovie3D extends CinemaMovieBase {
      * @param genre     The genre of the movie.
      */
     public CinemaMovie3D(Date startDate, String title, String genre) {
-        
+        super(startDate,title,genre);
     }
 
     /**
@@ -27,6 +27,8 @@ public class CinemaMovie3D extends CinemaMovieBase {
      */
     @Override
     public String displayTeaser() {
-        
+        return super.displayTeaser() + System.lineSeparator() +
+                "Full 3D support given !" + System.lineSeparator() +
+                this.additionalProduct;
     }
 }

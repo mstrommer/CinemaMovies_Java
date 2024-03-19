@@ -8,8 +8,7 @@ import java.util.Date;
  */
 public class CinemaMovieClassic extends CinemaMovieBase {
     
-       
-
+    private int numberOfLoveChairs;
 
     /**
      * Constructs a CinemaMovieClassic object with the specified start date, title,
@@ -21,7 +20,8 @@ public class CinemaMovieClassic extends CinemaMovieBase {
      * @param numberOfLoveChairs The number of love chairs available in the cinema.
      */
     public CinemaMovieClassic(Date startDate, String title, String genre, int numberOfLoveChairs) {
-           
+        super(startDate,title,genre);
+        this.numberOfLoveChairs = numberOfLoveChairs;
     }
 
     /**
@@ -33,7 +33,8 @@ public class CinemaMovieClassic extends CinemaMovieBase {
      */
     @Override
     public String displayTeaser() {
-           
-
+           return super.displayTeaser() + System.lineSeparator() +
+                   this.numberOfLoveChairs + " love-chairs available !" + System.lineSeparator() +
+                   this.additionalProduct;
     }
 }
